@@ -1,5 +1,7 @@
 ## User settings
-xcuserdata/
+*.xcodeproj/xcuserdata/
+*.xcworkspace/xcuserdata/
+*.xcuserstate
 
 ## Build artifacts
 build/
@@ -11,12 +13,9 @@ DerivedData/
 ## Swift Package Manager
 .build/
 .swiftpm/
-Package.resolved
 
 ## CocoaPods
 Pods/
-Podfile.lock
-*.xcworkspace
 
 ## Carthage
 Carthage/Build/
@@ -34,3 +33,6 @@ Carthage/Checkouts/
 
 ## Secrets
 Secrets.xcconfig
+
+## Xcode debugger
+*.xcdebugger
