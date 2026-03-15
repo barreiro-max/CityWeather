@@ -1,0 +1,11 @@
+//
+//  PUBLIC_API.xcconfig
+//  CityWeather
+//
+//  Created by MaxAdmin on 15.03.2026.
+//
+
+// Configuration settings file format documentation can be found at:
+// https://help.apple.com/xcode/#/dev745c5c974
+
+WEATHER_API_KEY=acb7b0d033f87c2d184affe11d51d781
