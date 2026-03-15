@@ -10,7 +10,7 @@ struct CityRow: View {
         } label: {
             HStack(spacing: 16) {
                 Text(city.name)
-                    .foregroundStyle(.black)
+                    .foregroundStyle(.primary)
             }
         }
     }
