@@ -2,6 +2,7 @@ import SwiftUI
 
 struct ShareWeatherView: View {
     @Environment(\.dismiss) private var dismiss
+    @Environment(\.colorScheme) var colorScheme
     let city: City
     let weather: Weather
     
@@ -28,7 +29,12 @@ extension ShareWeatherView {
         Text(sharedText)
             .padding()
             .background(.ultraThinMaterial)
-            .foregroundStyle(isCopy ? .gray : .black)
+            
+            .foregroundStyle(
+                isCopy
+                ? .gray
+                : (colorScheme == .light ? .black : .white)
+            )
             .animation(.easeInOut(duration: 0.2), value: isCopy)
             .onTapGesture {
                 isCopy.toggle()
