@@ -2,6 +2,7 @@ import SwiftUI
 
 struct CityRow: View {
     @Environment(CitiesRouter.self) private var router
+    @Environment(\.colorScheme) private var colorScheme
     let city: City
     
     var body: some View {
@@ -10,7 +11,9 @@ struct CityRow: View {
         } label: {
             HStack(spacing: 16) {
                 Text(city.name)
-                    .foregroundStyle(.primary)
+                    .foregroundStyle(
+                        colorScheme == .light ? .black : .white
+                    )
             }
         }
     }
