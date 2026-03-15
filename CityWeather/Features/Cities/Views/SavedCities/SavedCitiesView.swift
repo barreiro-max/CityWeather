@@ -3,7 +3,8 @@ import SwiftUI
 struct SavedCitiesView: View {
     @Environment(SavedCitiesRouter.self) var router
     @Environment(CityViewModel.self) var viewModel
-    
+    @Environment(\.colorScheme) private var colorScheme
+
     var body: some View {
         @Bindable var router = router
         
@@ -33,7 +34,9 @@ struct SavedCitiesView: View {
             } label: {
                 HStack(spacing: 16) {
                     Text(city.name)
-                        .foregroundStyle(.black)
+                        .foregroundStyle(
+                            colorScheme == .light ? .black : .white
+                        )
                 }
             }
         }
