@@ -5,7 +5,9 @@ struct Weather {
     let windSpeed: Double
     let description: String
     let icon: String
-    
+}
+
+extension Weather {
     init(dto: WeatherDTO) {
         self.temperature = dto.temperature
         self.feelsLike = dto.feelsLike
