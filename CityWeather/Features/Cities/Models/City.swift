@@ -1,4 +1,4 @@
-enum City: String, CaseIterable, Hashable {
+enum City: String {
     case kyiv = "Київ"
     case lviv = "Львів"
     case odesa = "Одеса"
@@ -16,4 +16,12 @@ enum City: String, CaseIterable, Hashable {
     var name: String {
         rawValue
     }
+}
+
+extension City: CaseIterable { }
+
+extension City: Hashable { }
+
+extension City: Identifiable {
+    var id: String { name }
 }
