@@ -7,10 +7,10 @@ struct WeatherFetcher: WeatherDataSource {
         self.session = session
     }
     
-    func fetchWeather(for city: City) async throws -> WeatherDTO {
+    func fetchWeather(for cityID: String) async throws -> WeatherDTO {
         let APIKey = Secrets.weatherAPIKey
         
-        let URLString = "https://api.openweathermap.org/data/2.5/weather?q=\(city.name),%20Україна&appid=\(APIKey)&units=metric&lang=ua"
+        let URLString = "https://api.openweathermap.org/data/2.5/weather?q=\( cityID),%20Україна&appid=\(APIKey)&units=metric&lang=ua"
         
         
         guard let URL = URL(string: URLString) else {
