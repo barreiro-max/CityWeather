@@ -30,18 +30,22 @@ struct SavedCitiesView: View {
     private var savedCitiesList: some View {
         List {
             ForEach(viewModel.savedCities, id: \.id) { city in
-                Button {
-                    router.pushSavedCity(city)
-                } label: {
-                    HStack(spacing: 16) {
-                        Text(city.name)
-                            .foregroundStyle(
-                                colorScheme == .light ? .black : .white
-                            )
-                    }
-                }
+                button(city: city)
             }
             .onDelete(perform: viewModel.delete(at:))
+        }
+    }
+    
+    private func button(city: City) -> some View {
+        Button {
+            router.pushSavedCity(city)
+        } label: {
+            HStack(spacing: 16) {
+                Text(city.name)
+                    .foregroundStyle(
+                        colorScheme == .light ? .black : .white
+                    )
+            }
         }
     }
 }
