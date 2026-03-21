@@ -33,6 +33,10 @@ struct SavedCitiesView: View {
                 button(city: city)
             }
             .onDelete(perform: viewModel.delete(at:))
+            .onMove(perform: viewModel.moveCities)
+        }
+        .toolbar {
+            EditButton()
         }
     }
     
