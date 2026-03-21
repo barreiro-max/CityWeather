@@ -16,6 +16,8 @@ import Observation
     
     func delete(city: City) {
         guard !savedCities.isEmpty else { return }
-        savedCities.removeLast()
+        if let index = savedCities.firstIndex(where: { $0.id == city.id }) {
+            savedCities.remove(at: index)
+        }
     }
 }
