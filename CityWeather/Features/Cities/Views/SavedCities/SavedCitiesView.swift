@@ -28,17 +28,20 @@ struct SavedCitiesView: View {
     }
     
     private var savedCitiesList: some View {
-        List(viewModel.savedCities, id: \.name) { city in
-            Button {
-                router.pushSavedCity(city)
-            } label: {
-                HStack(spacing: 16) {
-                    Text(city.name)
-                        .foregroundStyle(
-                            colorScheme == .light ? .black : .white
-                        )
+        List {
+            ForEach(viewModel.savedCities, id: \.id) { city in
+                Button {
+                    router.pushSavedCity(city)
+                } label: {
+                    HStack(spacing: 16) {
+                        Text(city.name)
+                            .foregroundStyle(
+                                colorScheme == .light ? .black : .white
+                            )
+                    }
                 }
             }
+            .onDelete(perform: viewModel.delete(at:))
         }
     }
 }
