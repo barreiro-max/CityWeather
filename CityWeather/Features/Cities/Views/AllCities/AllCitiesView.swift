@@ -41,6 +41,7 @@ struct AllCitiesView: View {
     
     private var infoLabel: some View {
         Text("Натисніть на назву міста, щоб побачити деталі")
+            .font(.callout)
             .foregroundStyle(.secondary)
             .multilineTextAlignment(.center)
             .padding()
