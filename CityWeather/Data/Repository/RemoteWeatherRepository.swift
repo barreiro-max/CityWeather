@@ -9,8 +9,10 @@ struct RemoteWeatherRepository: WeatherRepository {
         do {
             let dto = try await dataSource.fetchWeather(for: city.id)
             let weather = WeatherMapper.map(dto: dto)
+            Logger.data.log("Weather data mapped successfully")
             return weather
         } catch  {
+            Logger.data.error("Weather data is missing: \(error.localizedDescription)")
             throw WeatherRepositoryError.missingWeatherData
         }
     }
