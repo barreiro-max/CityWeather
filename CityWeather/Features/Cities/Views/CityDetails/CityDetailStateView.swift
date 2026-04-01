@@ -17,9 +17,13 @@ struct CityDetailStateView: View {
                 .background(.blue.opacity(0.2))
                 .cornerRadius(16)
                 .sheet(isPresented: $showShareSheet) {
-                    ShareWeatherView(city: city, weather: weather)
-                        .presentationDetents([.medium])
-                        .presentationDragIndicator(.visible)
+                    ShareWeatherView(
+                        cityName: city.name,
+                        temperature: weather.temperature,
+                        description: weather.description
+                    )
+                    .presentationDetents([.medium])
+                    .presentationDragIndicator(.visible)
                 }
             
         case .failure(let error):
